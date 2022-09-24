@@ -1,0 +1,12 @@
+D:\source\repos\EducationAPI\Core\bin\Debug\net6.0\Core.deps.json
+D:\source\repos\EducationAPI\Core\bin\Debug\net6.0\Core.dll
+D:\source\repos\EducationAPI\Core\bin\Debug\net6.0\Core.pdb
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.csproj.AssemblyReference.cache
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.AssemblyInfoInputs.cache
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.AssemblyInfo.cs
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.csproj.CoreCompileInputs.cache
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.dll
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\refint\Core.dll
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\Core.pdb
+D:\source\repos\EducationAPI\Core\obj\Debug\net6.0\ref\Core.dll
