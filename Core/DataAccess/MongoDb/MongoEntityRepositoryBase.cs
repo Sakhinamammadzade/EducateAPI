@@ -24,7 +24,7 @@ namespace Core.DataAccess.MongoDb
         } 
         public MongoEntityRepositoryBase()
         {
-            var database = new MongoClient("").GetDatabase("education");
+            var database = new MongoClient("mongodb://localhost:27017").GetDatabase("education");
             _collection=database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
         }
         public void Add(TDocument entity)

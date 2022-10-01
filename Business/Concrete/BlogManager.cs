@@ -27,12 +27,12 @@ namespace Business.Concrete
             try
             {
                 _blogDal.Add(blog);
-                return new SuccessResult(Message.BlogAdded);
+                return new SuccessResult(Message.CoursesAdd);
 
             }
             catch (Exception)
             {
-                return new ErrorResult(Message.BlogNotAdded);
+                return new ErrorResult(Message.ChooseNotAdded);
             }
           
            

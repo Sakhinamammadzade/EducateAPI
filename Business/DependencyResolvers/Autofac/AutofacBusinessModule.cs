@@ -23,6 +23,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CourseDal>().As<ICourseDal>();
             builder.RegisterType<BlogDal>().As<IBlogDal>();
             builder.RegisterType<BlogManager>().As<IBlogManager>();
+            builder.RegisterType<ChooseDal>().As<IChooseDal>();
+            builder.RegisterType<ChooseManager>().As<IChooseManager>();
 
 
 

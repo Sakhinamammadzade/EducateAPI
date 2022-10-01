@@ -15,6 +15,8 @@ namespace Business.Constance
         public static string CoursesAdd ="Courses add";
         public static string BlogAdded ="Blog add";
         public static string BlogNotAdded ="Blog not added";
+        public static string ChooseAdded = "Choose add";
+        public static string ChooseNotAdded = "Choose not added";
 
     }
 }

@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
             _couserService = couserService;
         }
 
-        [HttpPost("addtocart")]
+        [HttpPost("addcourse")]
         public IActionResult Add(Course course)
         {
             var result=_couserService.Add(course);
