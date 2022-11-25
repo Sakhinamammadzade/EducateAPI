@@ -10,20 +10,21 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    [BsonCollection("Course_content")]
+    [BsonCollection("Courses")]
     public class Course:IEntity
     {
         [BsonId]
-        [BsonRepresentation(BsonType.String)]
-        public  ObjectId _id;
+        [BsonRepresentation(BsonType.ObjectId)]
+        public  string _id;
         public string Name{ get; set; }
         public string Description{ get; set; }
         public string photoUrl{ get; set; }
-        public string UserId{ get; set; }
+        public int UserId{ get; set; }
         public decimal Rating{ get; set; }
         public decimal Duraction{ get; set; }
         public decimal Price{ get; set; }
-
+        [BsonElement ("course_category")]
+        public string CategoryId { get; set; }
         public List<CourseContent> CourseContents { get; set; }
 
 

@@ -25,7 +25,10 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<BlogManager>().As<IBlogManager>();
             builder.RegisterType<ChooseDal>().As<IChooseDal>();
             builder.RegisterType<ChooseManager>().As<IChooseManager>();
-
+            builder.RegisterType<CourseCategoyDal>().As<ICourseCategoryDal>();
+            builder.RegisterType<CourseCategoryManager>().As<ICourseCategoryManager>();
+            builder.RegisterType<AboutDal>().As<IAboutDal>();
+            builder.RegisterType<AboutManager>().As<IAboutManager>();
 
 
         }

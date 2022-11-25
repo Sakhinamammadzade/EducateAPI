@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
+using Business.Constance;
 using Core.Entities.Concrete;
 using Core.Helpers.Results.Abstract;
+using Core.Helpers.Results.Concrete.ErrorResult;
 using Core.Helpers.Results.Concrete.SuccessResult;
 using DataAccess.Abstract;
+using Entities.Concrete;
 using Entities.DTOS;
 using System;
 using System.Collections.Generic;
@@ -38,6 +41,27 @@ namespace Business.Concrete
             return _userDal.Get(x => x.Email == email);
         }
 
+        public IDataResult<UserListDTO> GetUsersById(string email)
+        {
+            var user = _userDal.Get(x => x.Email == email);
+            if (user == null)
+            {
+                return new ErrorDataResult<UserListDTO>(Message.UserNotFound);
+
+            }
+            UserListDTO result = new()
+            {
+                Id=user.Id,
+                Name=user.Name,
+                Email=user.Email,
+                Surname=user.SurName
+
+            };
+            return new SuccessDataResult<UserListDTO>(result);
+
+
+        }
+
         public void RemoveUser(User user)
         {
             _userDal.Delete(user);
@@ -48,6 +72,7 @@ namespace Business.Concrete
             _userDal.Update(user);
         }
 
+     
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using Core.DataAccess;
 using Entities.Concrete;
+using Entities.DTOS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace DataAccess.Abstract
 {
     public interface ICourseDal:IEntitiyRepositoryBase<Course>
     {
-
+        List<CourseContentDTO> GetCourseContent();
     }
 }

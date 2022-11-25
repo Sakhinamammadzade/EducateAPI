@@ -4,6 +4,7 @@ using Core.Helpers.Results.Abstract;
 using Core.Helpers.Results.Concrete.ErrorResult;
 using Core.Helpers.Results.Concrete.SuccessResult;
 using DataAccess.Abstract;
+using DataAccess.Concrete.Mongo;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -52,34 +53,29 @@ namespace Business.Concrete
             }
         }
 
-        public IDataResult<Blog> GetById(int id)
+        public IDataResult<Blog> GetById(string id)
         {
             try
             {
-                var blog = _blogDal.Get(x => x.Id == id);
+                var blog = _blogDal.Get(x => x._id == id);
                 return new SuccessDataResult<Blog>(blog);
+
             }
             catch (Exception)
             {
 
-                return new ErrorDataResult<Blog>();
+                return new ErrorDataResult<Blog>(Message.BlogNotAdded);
             }
+        }
+
+        public IDataResult<Blog> GetById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public IResult Remove(int id)
         {
-            try
-            {
-                var blog=_blogDal.Get(x=>x.Id== id);    
-
-                _blogDal.Delete(blog);
-                return new SuccessResult("blog is removed");
-
-            }
-            catch (Exception)
-            {
-                return new ErrorResult("Error");
-            }
+            throw new NotImplementedException();
         }
 
         public IResult Update(Blog blog)

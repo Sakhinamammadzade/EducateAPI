@@ -50,7 +50,8 @@ namespace Business.Concrete
                 Name = registerDTO.Name,
                 SurName = registerDTO.SurName,
                 PasswordHash=passwordHash,
-                PasswordSalt=passwordSalt
+                PasswordSalt=passwordSalt,
+               
 
             };
             _userManager.AddUser(user); 

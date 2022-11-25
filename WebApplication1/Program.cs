@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+var myAllowSpesificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -42,6 +43,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(myAllowSpesificOrigins, policy =>
+    {
+        policy
+         .AllowAnyOrigin()
+         .AllowAnyHeader()
+         .AllowAnyMethod();
+    });
+});
+
+
 var app = builder.Build();
 
 
@@ -51,6 +64,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(myAllowSpesificOrigins);
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();

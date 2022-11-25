@@ -8,14 +8,14 @@ namespace Core.Helpers.Results.Concrete.SuccessResult
 {
     public class SuccessDataResult<T> : DataResult<T>
     {
-        public SuccessDataResult() : base(default, true)
+        public SuccessDataResult() : base(default!, true)
         {
         }
         public SuccessDataResult(T data):base(data,true)
         {
                 
         }
-        public SuccessDataResult(string message) : base(default, true,message)
+        public SuccessDataResult(string message) : base(default!, true,message)
         {
 
         }

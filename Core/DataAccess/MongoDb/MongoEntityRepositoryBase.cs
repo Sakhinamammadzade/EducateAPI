@@ -1,5 +1,6 @@
 ﻿using Core.DataAccess.MongoDb.MongoSettings;
 using Core.Entities;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace Core.DataAccess.MongoDb
 
         public void Delete(TDocument entity)
         {
+
             throw new NotImplementedException();
         }
 
@@ -44,7 +46,10 @@ namespace Core.DataAccess.MongoDb
 
         public List<TDocument> GetAll(Expression<Func<TDocument, bool>> filter = null)
         {
-           return _collection.Find(filter).ToList();
+           return filter==null
+                ?_collection.Find(x=>true).ToList()
+                :_collection.Find(filter).ToList();
+
         }
 
         public void Update(TDocument entity)
